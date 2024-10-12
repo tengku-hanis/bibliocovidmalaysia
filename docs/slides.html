@@ -43,7 +43,7 @@ class: about-me-slide, inverse, middle, center
 width: 50px;
 height: 60px;
 z-index: 0;
-background-image: url(source/R_MY.jpg);
+background-image: url(R_MY.jpg);
 background-size: contain;
 background-repeat: no-repeat;
 position: absolute;
@@ -74,7 +74,7 @@ top:1em;right:1em;
 
 ## About me
 
-&lt;img style="border-radius: 50%;" src="source/tengku_hanis.jpg" width="150px"/&gt;
+&lt;img style="border-radius: 50%;" src="tengku_hanis.jpg" width="150px"/&gt;
 
 &lt;p style="font-size:20pt; font-weight:bold; font-family:lato"&gt;Tengku Muhammad Hanis Bin Tengku Mokhtar&lt;/p&gt;    
 
@@ -98,7 +98,7 @@ top:1em;right:1em;
 - Since the outbreak, extensive research has been conducted to understand and manage the disease
 - Thus, we can use a bibliometric analysis to explore the landscape of this research area 
 
-&lt;img src="source/covid_pic.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="covid_pic.jpg" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -109,7 +109,7 @@ top:1em;right:1em;
 - Bibliometric analysis is explorative in nature
 - In this talk, we going to use both R (bibliometrix) and Python (pyBibX)
 
-&lt;img src="source/biblio_summary.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="biblio_summary.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -176,7 +176,7 @@ allplots &lt;- plot(res)  # we get 5 plots here
 allplots$AnnualScientProd
 ```
 
-&lt;img src="source/r/asp.png" width="65%" style="display: block; margin: auto;" /&gt;
+&lt;img src="r/asp.png" width="65%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -187,7 +187,7 @@ allplots$AnnualScientProd
 allplots$AverTotCitperYear
 ```
 
-&lt;img src="source/r/atc.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="r/atc.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -201,7 +201,7 @@ authorProdOverTime(covid_data, k = 10)
 ```
 
 
-&lt;img src="source/r/top_author.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="r/top_author.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -214,7 +214,7 @@ thematic map:
 thematicMap(covid_data, field = "DE", n.labels = 5)
 ```
 
-&lt;img src="source/r/tm.png" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="r/tm.png" width="75%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -253,7 +253,7 @@ rm = ['2019', 'disease', '19', 'pandemic'] #remove few words
 cov_data.get_top_ngrams(view = 'notebook', entry = 'kwa', ngrams = 2, stop_words = ['en'], rmv_custom_words = rm, wordsn = 15)
 ```
 
-&lt;img src="source/python/topbigrams.png" width="72%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/topbigrams.png" width="72%" style="display: block; margin: auto;" /&gt;
 
 ---
 ## Analysis in Python (cont.)
@@ -266,7 +266,7 @@ rm2 = ['pandemic', 'covid', 'covid-19', 'sars-cov-2', 'coronavirus', 'malaysia',
 cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2015, end = 2024)
 ```
 
-&lt;img src="source/python/kw_evo0.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/kw_evo0.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -279,7 +279,7 @@ Let's focus on the first first 5 years (2015-2019)
 cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2015, end = 2019)
 ```
 
-&lt;img src="source/python/kw_evo1.png" width="52%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/kw_evo1.png" width="52%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -292,7 +292,7 @@ Next, let's see the next 5 years (2020-2024)
 cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2019, end = 2024)
 ```
 
-&lt;img src="source/python/kw_evo2.png" width="52%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/kw_evo2.png" width="52%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -305,7 +305,7 @@ Tree map of countries:
 cov_data.tree_map(entry = 'ctr', topn = 20, size_x = 30, size_y = 15, txt_font_size = 22)
 ```
 
-&lt;img src="source/python/treemap_country.png" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/treemap_country.png" width="75%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -318,7 +318,7 @@ Further details on countries collaboration:
 cov_data.network_adj_map(view = 'notebook', connections = False, country_lst = [])
 ```
 
-&lt;img src="source/python/country_collab.png" width="55%" style="display: block; margin: auto;" /&gt;
+&lt;img src="python/country_collab.png" width="55%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -340,7 +340,7 @@ networkPlot(country_collab, n = 20, cluster = "none", Title = "Collaboration bet
     type = "auto", size.cex = T)
 ```
 
-&lt;img src="source/r/country_collab_r.png" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="r/country_collab_r.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -363,7 +363,7 @@ networkPlot(country_collab, n = 20, cluster = "none", Title = "Collaboration bet
 - Both packages have several similar overlapped functions
 - Both packages have limited documentations
 
-&lt;img src="source/bibliometrix_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;&lt;img src="source/pybibx_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;
+&lt;img src="bibliometrix_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;&lt;img src="pybibx_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;
 
 ---
 
@@ -384,7 +384,7 @@ class: center, middle
 
 .center[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> Slides: https://tinyurl.com/biblio-rconference2022]
 
-&lt;img src="source/qrcode.png" width="25%" /&gt;
+&lt;img src="qrcode.png" width="25%" /&gt;
 
 
 
