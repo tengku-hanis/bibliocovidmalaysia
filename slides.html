@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Exploring the COVID-19 Research Landscape in Malaysia: A Bibliometric Case Study</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD" />
+    <meta name="date" content="2024-10-27" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/chocolate-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Exploring the COVID-19 Research Landscape in Malaysia: A Bibliometric Case Study
+]
+.subtitle[
+## R confeRence 2024
+]
+.author[
+### Tengku Muhammad Hanis Bin Tengku Mokhtar, PhD
+]
+.institute[
+### Founder and Academic Trainer, <br>Jom Research
+]
+.date[
+### October 27, 2024
+]
+
+---
+
+
+name: about-me
+layout: false
+class: about-me-slide, inverse, middle, center
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 50px;
+height: 60px;
+z-index: 0;
+background-image: url(source/R_MY.jpg);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+## About me
+
+&lt;img style="border-radius: 50%;" src="source/tengku_hanis.jpg" width="150px"/&gt;
+
+&lt;p style="font-size:20pt; font-weight:bold; font-family:lato"&gt;Tengku Muhammad Hanis Bin Tengku Mokhtar&lt;/p&gt;    
+
+**Founder and Academic Trainer, Jom Research**
+
+**MBBCh, MSc (Medical Statistics), &lt;br&gt;PhD (Public Health Epidemiology)**
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> tengkuhanis.netlify.app](https://tengkuhanis.netlify.app/)
+[<svg aria-label="Twitter" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><title>Twitter</title><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg> @tmhanis](https://twitter.com/tmhanis)
+[<svg aria-label="GitHub" role="img" viewBox="0 0 496 512" style="height:1em;width:0.97em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><title>GitHub</title><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> @tengku-hanis](https://github.com/tengku-hanis)&lt;br&gt;
+[<svg aria-label="LinkedIn" role="img" viewBox="0 0 448 512" style="height:1em;width:0.88em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><title>LinkedIn</title><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg> @Tengku Muhammad Hanis](https://www.linkedin.com/in/tengku-muhammad-hanis-9a7222144/)
+
+[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> jomresearch.netlify.app](https://jomresearch.netlify.app/)
+
+---
+
+## COVID-19
+
+- Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus
+- The virus has affected countries globally, including Malaysia 
+- Since the outbreak, extensive research has been conducted to understand and manage the disease
+- Thus, we can use a bibliometric analysis to explore the landscape of this research area 
+
+&lt;img src="source/covid_pic.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Bibliometric analysis
+
+- Bibliometric analysis is an umbrella term for a set of analyses 
+- Basically, it refers to an analysis of bibliographic information
+- Bibliometric analysis is explorative in nature
+- In this talk, we going to use both R (bibliometrix) and Python (pyBibX)
+
+&lt;img src="source/biblio_summary.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Data and search strategy
+
+| Parameters    | Details             |
+| ------------- |:-------------------:|
+| Database      | Scopus              |
+| Date searched | September30, 2024   |
+| Search terms  | TITLE ( covid-19 ) OR TITLE ( covid ) OR TITLE ( 2019-ncov ) OR TITLE ( coronavirus ) AND ( LIMIT-TO ( AFFILCOUNTRY , "Malaysia" ) ) AND ( LIMIT-TO ( DOCTYPE , "ar" ) OR LIMIT-TO ( DOCTYPE , "cp" ) OR LIMIT-TO ( DOCTYPE , "re" ) OR LIMIT-TO ( DOCTYPE , "ch" ) OR LIMIT-TO ( DOCTYPE , "ed" ) OR LIMIT-TO ( DOCTYPE , "bk" ) )     | 
+| Results       | 5,995               |
+
+---
+
+## Analysis in R
+
+Packages:
+
+
+``` r
+library(dplyr)
+library(ggplot2)
+library(bibliometrix)
+```
+
+
+
+Descriptive:
+
+
+``` r
+res &lt;- biblioAnalysis(covid_data)
+summary(res, k = 10)
+```
+
+
+```
+## 
+## 
+## MAIN INFORMATION ABOUT DATA
+## 
+##  Timespan                              2008 : 2025 
+##  Sources (Journals, Books, etc)        2238 
+##  Documents                             5932 
+##  Annual Growth Rate %                  8.5 
+##  Document Average Age                  1.97 
+##  Average citations per doc             14.37 
+##  Average citations per year per doc    3.967
+```
+
+---
+
+## Analysis in R (cont.)
+
+Basic plots:
+
+
+``` r
+allplots &lt;- plot(res)  # we get 5 plots here
+```
+
+
+``` r
+allplots$AnnualScientProd
+```
+
+&lt;img src="source/r/asp.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in R (cont.)
+
+
+``` r
+allplots$AverTotCitperYear
+```
+
+&lt;img src="source/r/atc.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in R (cont.)
+
+Top authors in the research area:
+
+
+``` r
+authorProdOverTime(covid_data, k = 10)
+```
+
+
+&lt;img src="source/r/top_author.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in R (cont.)
+
+thematic map:
+
+
+``` r
+thematicMap(covid_data, field = "DE", n.labels = 5)
+```
+
+&lt;img src="source/r/tm.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python 
+
+Install libraries:
+
+- Make sure to install reticulate package first (if using RStudio)
+- Some of the functions are not well executed in RStudio
+
+
+``` python
+reticulate::py_install('pyBibX')
+```
+
+Load libraries
+
+
+``` python
+import numpy as np
+import pandas as pd
+import textwrap
+
+from pyBibX.base import pbx_probe #read data
+```
+
+---
+
+## Analysis in Python (cont.)
+
+Most common n-grams from author's keywords (entry = 'kwa')
+
+
+``` python
+rm = ['2019', 'disease', '19', 'pandemic'] #remove few words
+cov_data.get_top_ngrams(view = 'notebook', entry = 'kwa', ngrams = 2, stop_words = ['en'], rmv_custom_words = rm, wordsn = 15)
+```
+
+&lt;img src="source/python/topbigrams.png" width="72%" style="display: block; margin: auto;" /&gt;
+
+---
+## Analysis in Python (cont.)
+
+Top keywords evolution for the last 10 years:
+
+
+``` python
+rm2 = ['pandemic', 'covid', 'covid-19', 'sars-cov-2', 'coronavirus', 'malaysia', 'covid-19 pandemic']
+cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2015, end = 2024)
+```
+
+&lt;img src="source/python/kw_evo0.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python (cont.)
+
+Let's focus on the first first 5 years (2015-2019)
+
+
+``` python
+cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2015, end = 2019)
+```
+
+&lt;img src="source/python/kw_evo1.png" width="52%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python (cont.)
+
+Next, let's see the next 5 years (2020-2024)
+
+
+``` python
+cov_data.plot_evolution_year(view = 'notebook', stop_words = ['en'], rmv_custom_words = rm2, key = 'kwa', topn = 5, txt_font_size = 12, start = 2019, end = 2024)
+```
+
+&lt;img src="source/python/kw_evo2.png" width="52%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python (cont.)
+
+Tree map of countries:
+
+
+``` python
+cov_data.tree_map(entry = 'ctr', topn = 20, size_x = 30, size_y = 15, txt_font_size = 22)
+```
+
+&lt;img src="source/python/treemap_country.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python (cont.)
+
+Further details on countries collaboration:
+
+
+``` python
+cov_data.network_adj_map(view = 'notebook', connections = False, country_lst = [])
+```
+
+&lt;img src="source/python/country_collab.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Analysis in Python (cont.)
+
+Alternatively, we can use bibliometrix package from R:
+ 
+
+``` r
+# Extract authors' countries
+author_country &lt;- metaTagExtraction(dat, Field = "AU_CO")
+
+# Country collab network
+country_collab &lt;- biblioNetwork(author_country, analysis = "collaboration", network = "countries")
+
+# Plot the network
+set.seed(123)
+networkPlot(country_collab, n = 20, cluster = "none", Title = "Collaboration between top 20 countries using bibliometrix (R)",
+    type = "auto", size.cex = T)
+```
+
+&lt;img src="source/r/country_collab_r.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Conclusion
+
+- We have a good research landscape especially in terms of availability of the experts and collaboration between countries
+- We see a few dominant research area such as COVID-19 research related online learning and mental health
+- COVID-19 research in Malaysia before 2019 were almost non-existent
+- COVID-19 research related to AI especially deep learning in Malaysia have yet to be extensively studied
+
+---
+
+## Some remarks
+
+- Both bibliometrix (R) and pyBibX (python) have their own advantages
+- bibliometrix vs pyBibX :
+  - pyBibX is a little bit heavier to run (biased opinion)
+  - pyBibX takes a bit more effort to be able to run smoothly in RStudio
+  - pyBibX is a larger package (and probably more powerful) than bibliometrix
+- Both packages have several similar overlapped functions
+- Both packages have limited documentations
+
+&lt;img src="source/bibliometrix_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;&lt;img src="source/pybibx_logo.png" width="40%" style="background-color: #4131e8; padding:2px;" /&gt;
+
+---
+
+## Suggested readings
+
+- About bibliometric analysis:
+  - [bibliometrix : An R-tool for comprehensive science mapping analysis](https://doi.org/10.1016/j.joi.2017.08.007)
+  - [How to conduct a bibliometric analysis: An overview and guidelines. Journal of Business Research](https://doi.org/10.1016/j.jbusres.2021.04.070)
+  - [Preliminary guideline for reporting bibliometric reviews of the biomedical literature (BIBLIO): a minimum requirements](https://doi.org/10.1186/s13643-023-02410-2) 
+- pyBibX: https://github.com/Valdecy/pyBibX
+- bibliometrix: https://github.com/massimoaria/bibliometrix
+
+---
+
+class: center, middle
+
+# Thank you!
+
+.center[<svg aria-hidden="true" role="img" viewBox="0 0 640 512" style="height:1em;width:1.25em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:currentColor;overflow:visible;position:relative;"><path d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"/></svg> Slides: https://tinyurl.com/biblio-rconference2022]
+
+&lt;img src="source/qrcode.png" width="25%" /&gt;
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "14:8"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
