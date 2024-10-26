@@ -94,11 +94,12 @@ top:1em;right:1em;
 ## COVID-19
 
 - Coronavirus disease (COVID-19) is an infectious disease caused by the SARS-CoV-2 virus
+- Previously, we had also been affected by the severe acute respiratory syndrome (SARS) and middle east respiratory syndrome (MERS)
 - The virus has affected countries globally, including Malaysia 
 - Since the outbreak, extensive research has been conducted to understand and manage the disease
 - Thus, we can use a bibliometric analysis to explore the landscape of this research area 
 
-&lt;img src="covid_pic.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="covid_pic.jpg" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -168,7 +169,7 @@ Basic plots:
 
 
 ``` r
-allplots &lt;- plot(res)  # we get 5 plots here
+allplots &lt;- plot(res) # we get 5 plots here
 ```
 
 
@@ -197,7 +198,7 @@ Top authors in the research area:
 
 
 ``` r
-authorProdOverTime(covid_data, k = 10)
+authorProdOverTime(covid_data, k=10)
 ```
 
 
@@ -211,7 +212,7 @@ thematic map:
 
 
 ``` r
-thematicMap(covid_data, field = "DE", n.labels = 5)
+thematicMap(covid_data, field = 'DE', n.labels = 5)
 ```
 
 &lt;img src="r/tm.png" width="75%" style="display: block; margin: auto;" /&gt;
@@ -332,12 +333,11 @@ Alternatively, we can use bibliometrix package from R:
 author_country &lt;- metaTagExtraction(dat, Field = "AU_CO")
 
 # Country collab network
-country_collab &lt;- biblioNetwork(author_country, analysis = "collaboration", network = "countries")
+country_collab &lt;- biblioNetwork(author_country, analysis = "collaboration",  network = "countries")
 
 # Plot the network
 set.seed(123)
-networkPlot(country_collab, n = 20, cluster = "none", Title = "Collaboration between top 20 countries using bibliometrix (R)",
-    type = "auto", size.cex = T)
+networkPlot(country_collab, n = 20, cluster = "none", Title = "Collaboration between top 20 countries using bibliometrix (R)", type = "auto", size.cex = T)
 ```
 
 &lt;img src="r/country_collab_r.png" width="50%" style="display: block; margin: auto;" /&gt;
